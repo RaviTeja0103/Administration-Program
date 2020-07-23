@@ -1,0 +1,17 @@
+import csv
+def file(list):
+    with open("student_info.csv","a",newline='') as csv_file:
+        writer=csv.writer(csv_file)
+
+        if csv_file.tell()==0:
+            writer.writerow(["Name","Age","Contact Number","E-Mail ID"])
+
+        writer.writerow(list)
+c="y"
+while(c=="y"):
+    s_i=input("Enter the Student Info in formate(Nmae Age Contact_Number E-Mail_ID) :\n")
+    print("Entered delails of student :",s_i)
+    s_i_l=s_i.split(" ")
+    file(s_i_l)
+    c=input("Do u want to enter another stdent details(y/n):")
+    print("\n")
